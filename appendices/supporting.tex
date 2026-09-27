@@ -1,0 +1,142 @@
+\section*{Author Notes}
+\subsection*{Acknowledgments}
+Course instructor: Professor Luyao Zhang. The course's PS2 Overleaf and A0 poster templates supply the document structure and visual framework. The supplied PS1 records attribute the Compute / Participation / Dignity framing and the distinction between allocation and justification to Professor Zhang. The earlier anonymous green- and blue-ink feedback informed the PS1 equilibrium and fairness checks; it is not presented as new PS2 peer review. This work acknowledges the OpenVLA researchers for application motivation, the cited mechanism-design and scheduling literature for theoretical foundations, and Python and browser software for implementation. ChatGPT/Codex assisted analysis, programming, source checking, English drafting and formatting. No company partnership, human experiment or unrecorded reviewer contribution is claimed.
+
+\subsection*{Integrated contribution}
+Compute Commons is a solo team: Xinrong Sun is the sole author. The proposal connects a private-value auction, a public access decision and a behavioral measurement design within one inference-allocation problem. Its contribution is to make separate institutional choices inspectable: a credit changes firm ranking, a reservation assigns decision capacity outside the commercial auction, and eligibility verification protects the intended recipients. Exact computations expose both redistribution and a profitable identity deviation. The same example appears in the paper, notebook, behavioral interface and poster so a reviewer can reconstruct the claim. The contribution is an application and testable research design built on established auction theory, with synthetic rather than empirical evidence. Human review, new classroom play and symposium response must be documented separately from tool-executed calculations.
+
+\subsection*{Named individual entry: Xinrong Sun, author 1}
+\textbf{Personal intellectual decision.} Sun selected embodied-AI compute access as the domain and, in the classroom account supplied on September 27, selected sealed-bid second-price allocation of high-quality inference slots, private values, a Bayesian equilibrium benchmark and an access-protected comparison. This is the documented author input. \textbf{Concrete output.} PS1's Compute Commons analysis and the four-part classroom statement are the inherited intellectual record; the present AI-assisted draft translates that decision into Sections 1--4, \texttt{code/model.py}, the notebook and behavioral interface. \textbf{Verification.} The author correctly identifies static timing and incomplete information in the supplied statement. Code execution and the new payment derivation were checked with tools during preparation; independent human checking of those additions has not been certified. \textbf{Connection.} The classroom distinction between rational bidding and behavioral departures determines both the model's solution concept and the interface's prediction-before-outcome sequence. \textbf{Next responsibility.} Independently reconstruct the four payment examples, inspect the cited papers and test outputs, play the interface, complete the two assigned human peer reviews, and record the resulting revisions.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\appendix
+\section{Technical details and reproducibility}
+\subsection{Environment, assumptions and parameter table}
+A slot is an admission right to one standardized high-quality inference window during a supervised robot-task evaluation. A feasible operating specification must fix model/checkpoint, hardware, maximum duration, response deadline and fallback before bids. No claim is made that a single model call controls a complete task, or that the present illustrative windows already meet a real latency target. Unit demand means the second slot has no additional value to the same bidder in the modeled round. Workers select evaluations for reserved windows outside this commercial auction; their within-reservation allocation is a governance commitment, not a solved game.
+
+\begin{center}\small
+\begin{tabularx}{\columnwidth}{lY}\toprule
+Symbol & Definition and implemented case\\\midrule
+$n,K$ & Three firms and two identical windows.\\
+$v$ & Private monetary values $(10,9,6)$; synthetic units, not prices or measured success.\\
+$e$ & Verified status $(0,0,1)$, fixed before bids.\\
+$r$ & Worker reservations: integers $0\leq r\leq K$.\\
+$c$ & Nonnegative eligibility credit; main sweep $0,\ldots,12$.\\
+$x_i,p_i$ & Binary commercial allocation and nonnegative payment.\\
+$V,R$ & Sum of winning true values and auction revenue.\\
+$a,L$ & Independent audit probability and additional fine; stress case $L=10$.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+The coordinator publishes the deadline, parameters, eligibility and tie order before the simultaneous sealed-bid stage. There are no intermediate bid disclosures or revisions after the deadline. Allocation and payments close the one-round game. All players know the mechanism; each sees only its own realized value. A possible illustrative common prior is independent uniform values on $[0,12]$, but no distribution is estimated, sampled or needed for the reported ex-post results. With correlated private values, the same dominant-strategy argument still applies. Common values, externalities from rivals winning, binding liquidity constraints, collusion, false identities and strategic seller behavior require different analysis.
+
+\subsection{Critical-payment argument}
+Fix bidder $i$'s eligibility, all rival bids and the public rule. For $q\geq1$, increasing $b_i$ weakly increases its rank. Let $t_i$ be the $q$th-highest rival score when $q$ rivals exist, and zero otherwise. The winning region is $b_i+ce_i>t_i$, together with any boundary assigned by the fixed tie order. Thus the nonnegative critical value is $\tau_i=\max(0,t_i-ce_i)$. Winning yields utility $v_i-\tau_i$ regardless of one's winning report; losing yields zero. If $v_i>\tau_i$, truthful reporting wins and no losing deviation improves utility. If $v_i<\tau_i$, truthful reporting loses and winning gives negative utility. At equality, either outcome gives zero utility. If the credit makes $\tau_i=0$, reporting truthfully never forces a negative payoff. For $q=0$, all utilities are zero. Consequently truthful reporting is weakly dominant, individually rational, and induces nonnegative payments. At $c=0$ this reduces to the unit-demand Vickrey benchmark \cite{vickrey,roughgarden}.
+
+The proof is conditional on eligibility verification, unit demand, private values, enforceable payments and bid-independent tie-breaking. It neither implies a unique equilibrium nor predicts that every human bids truthfully. A bidder may submit several different reports that induce the same allocation and payment. Accordingly, the behavioral outcome of interest is profitable deviation or realized utility loss, not just numerical distance from value.
+
+\subsection{Access threshold and comparative statics}
+Let two ineligible incumbents have values $a\geq b>d$, and one eligible entrant value $d$, with incumbents preceding the entrant in ties. At $K=2,r=0$, the entrant wins iff $c>b-d$. At $r=1$, it wins iff $c>a-d$. A worker reservation raises the minimum strict winning credit by $a-b$ in this profile, because the entrant now competes with the highest incumbent instead of the lower one. This is a transparent order-statistic result for this environment, not a general theorem about all access policies.
+
+At $a=10,b=9,d=6$, the strict thresholds are 3 and 4. With $r=0$ and $c\in(3,4]$, $A$ and $E$ win, their payments are 9 and $9-c$, and revenue is $18-c$. Baseline revenue is 12. At $c=4$ the resulting revenue is 14. Revenue is therefore not a monotone proxy for firm-value efficiency, and a credit does not necessarily reduce revenue. At $r=1,c=5$, $E$ pays $10-5=5$. The access comparison must hold capacity fixed when interpreting a credit effect. Moving from $(r,c)=(0,0)$ directly to $(1,5)$ mixes two interventions; the intermediate treatments in Table~\ref{tab:results} separate them.
+
+For fixed $r$, report credit's firm-value opportunity cost as the top-$q$ uncredited value sum minus $V$. It equals 0, 3, 0 and 4 for the four displayed rules. Relative to the no-reservation baseline, the combined rule displaces 13 firm-value units, including 9 attributable to reducing commercial capacity and 4 to the credit conditional on that capacity. These figures exclude the value of the worker-directed evaluation. Neither the credit parameter nor revenue should be added to raw firm value as though it were an observed social benefit. Transfers are not new productive value.
+
+\subsection{Eligibility stress and audit boundary}
+Under $(r,c)=(1,5)$, truthful eligibility produces $E$ as winner and $u_A=0$. If $A$ can acquire an undeserved label, scores become $(15,9,11)$. $A$ wins, pays $11-5=6$, and earns $10-6=4$. The code's recorded eligible-slot count then equals one, although the true entrant receives zero slots. This distinction motivates auditing identities, not merely counting labeled winners.
+
+Assume a false claim is detected after allocation with independent probability $a$, detection is perfect when audited, and an additional enforceable fine $L$ applies without changing the allocation or payment. The deviation's expected incremental gain is $4-aL$. Hence $aL\geq4$ weakly deters this particular deviation; at $L=10$, $a\geq0.4$. If audit cost per inspection is $k$, the associated expected inspection cost is $ak$. Credible enforcement, false positives, risk preferences, legal authority, optimal audit policy and other values are unresolved. The proposed practical safeguard is verification before bidding, with an appeal channel; the ex-post fine calculation diagnoses the missing institution rather than supplying a deployment policy.
+
+\subsection{Language-independent algorithm}
+\begin{enumerate}
+\item Validate finite nonnegative values, bids and credit, public binary eligibility, and integer $0\leq r\leq K$.
+\item Compute $q=\min(n,K-r)$ and each score $b_i+ce_i$.
+\item Sort descending by score, resolving ties by fixed bidder index. Assign the first $q$ firms one window each.
+\item Let $z$ be the highest losing score, or zero if everyone wins. Charge winning $i$ the amount $\max(0,z-ce_i)$; charge losers zero. If $q=0$, nobody pays.
+\item Compute allocation, true-value utility, revenue, raw firm value, verified entrant access and worker-reserved capacity.
+\item Repeat with identical values and capacity across rules. Independently enumerate feasible subsets on a small grid and check every tested unilateral deviation.
+\end{enumerate}
+For a winner, the highest losing score equals its $q$th-highest rival score. Sorting costs $O(n\log n)$; subsequent calculations cost $O(n)$. Exhaustive verification intentionally uses a slower independent subset objective on three firms.
+
+\subsection{Fresh-run record and artifacts}
+The snapshot is \texttt{ps2-review-2026-09-27}. Run \texttt{python model.py} in \texttt{code/}; this writes \texttt{results.json} and \texttt{sweep.csv}. Python's exact version is recorded in the JSON. No third-party dependency, credential, training run or stochastic seed is required. The self-contained notebook executes the same source and embeds its actual output. The sweep contains 39 $(r,c)$ combinations for $r\in\{0,1,2\}$ and $c\in\{0,\ldots,12\}$. Its grid is a sensitivity display, not an empirical distribution.
+
+The verification grid uses 125 rival-report vectors, 15 rule settings, three possible deviators, five own values and five own reports. It checks 140,625 deviation comparisons, 1,875 independently enumerated allocation objectives, 1,875 revenue/individual-rationality assertions, and 64 edge-case assertions: 144,439 in total. Maximum profitable deviation is zero on that grid. Edge cases include zero commercial capacity, uncongested allocation, zero values and fractional reports. The continuous proof is necessary because a finite grid alone cannot establish general incentive compatibility. File hashes and the execution record accompany the source. The PS2 deployment URLs and remote commit remain to be completed; a local snapshot is not a public deployment.
+
+\subsection{AI-use disclosure and responsibility}
+On September 27, 2026, OpenAI ChatGPT/Codex (GPT-6 family; a more specific backend identifier was not exposed) assisted with reading the supplied materials, primary-source retrieval, critical-payment derivation, implementation, finite verification, English drafting, LaTeX and poster preparation. The significant request was to build PS2 from PS1 around embodied-AI compute using course game theory and the supplied requirements. Sun subsequently supplied the solo-team identity and a four-part classroom auction account. Material AI suggestions include the two-window comparison, explicit critical-price adjustment for eligible winners, identity-manipulation counterexample, and separating utility regret from bid error. Unsupported claims of a new general truthfulness theorem, completed human experiments and completed human review were excluded. Human changes currently documented are the topic, team identity and classroom design input; final independent review of the new derivations, sources and artifacts remains pending. This disclosure records assistance and responsibility without certifying checks that have not occurred.
+
+\section{Cumulative intellectual development}
+\begin{description}
+\item[PS1, September 20 supplied revision.] Separate a complete-information pooling game from allocation under advisory versus binding access floors. The result showed rule-dependent redistribution but assumed truthful inputs and did not solve the whole institution.
+\item[PS1 source verification, September 27.] The supplied public repository is now accessible at commit \href{https://github.com/Sunnyxinrong/PS1-Xinrong-Sun/commit/50930c85a29265d24e603dc25d3968879ccc5ad6}{\texttt{50930c85a292}}. Its README and participation code are public. This updates the older PDF's historical deployment warning; the PS1 commit is not a PS2 release.
+\item[Classroom account, received September 27.] Sun proposed a sealed-bid second-price inference auction, classified it as static with incomplete information, anticipated misunderstanding and winning motives, and proposed credits or reservations for smaller operators. The class date and actual bid log were not supplied.
+\item[PS2 consequence.] Sections 2--3 replace the assumed-truthful allocation module with explicit private values, fixed eligibility and critical payments. The worker reservation preserves PS1's distinction between participation and explanation, while separating worker task-selection rights from a firm's eligible status.
+\item[Literature and computational revision.] Themis and single-parameter auction theory narrow the novelty claim. The false-label example changes the institutional proposal from self-reported eligibility to prior verification. The behavioral design now records regret, because a nontruthful numerical bid need not be a consequential error.
+\end{description}
+The supplied classroom whiteboard distinguishes static/complete (NE), dynamic/complete (SPNE), static/incomplete (BNE), and dynamic/incomplete (PBE). The current one-round sealed-bid model uses the static/incomplete category and a stronger dominant-strategy benchmark. A future strategic audit or repeated-arrival model would require reclassifying timing and solving the extended game.
+
+\section{Literature verification and three-lens checks}
+\subsection{Closest-work comparison}
+Sources were opened on September 27. Verification is tool-assisted; it does not certify the author's independent reading. The source comparison below supports a bounded application gap, not an exhaustive novelty claim.
+
+\textbf{Themis \cite{themis}:} research question: fair GPU sharing for ML training; objective: finish-time fairness and efficiency; method: a two-level scheduler with round-based partial-allocation auctions; behavioral assumption: applications report valuations for allocations; application: placement-sensitive training; validation: workload-trace evaluation; integration: economic allocation within a systems scheduler. \textbf{This project:} admission to standardized embodied-AI inference windows; separate entrant status and worker decision rights; critical monetary payments; synthetic checks and a proposed comprehension study. Themis defeats a broad claim that GPU auctions with fairness are new. We do not compare performance or claim its truthfulness analysis is absent.
+
+\textbf{Vickrey and critical-payment theory \cite{vickrey,roughgarden}:} research question: allocate scarce units with private values; objective: correct incentives; method: allocation and payment rules with formal analysis; behavioral benchmark: utility maximization; validation: theory. \textbf{This project:} uses the established single-parameter framework. Its contribution is the explicit distributional comparison and eligibility failure case within an embodied-AI access proposal, not the second-price or critical-payment principle.
+
+\textbf{OpenVLA \cite{openvla}:} research question: generalist robot control from vision and language; method: a seven-billion-parameter VLA trained on robot demonstrations; validation: robot-task evaluation and adaptation studies. \textbf{This project:} proposes a resource-admission institution around a candidate VLA workload. It does not run OpenVLA, estimate its task values, or infer a latency guarantee from model availability. Its published experiments are not a benchmark for auction performance.
+
+\textbf{Hassidim et al. \cite{hassidim}:} research question: why agents misreport in strategy-proof matching; evidence: a review of preference misrepresentation in deferred acceptance. \textbf{This project:} distinguishes payment confusion, indifference and legitimacy in an inference-auction pilot. Matching evidence motivates a question, but does not validate an auction behavioral effect or establish that payment fear causes underbidding.
+
+\subsection{Three-lens consequence check}
+\textbf{Game theory changes the prediction:} private values require a type-contingent strategy, and the critical-payment threshold replaces PS1's truthfulness assumption. Challenge: sweep alternative bids and exhibit the out-of-domain eligibility deviation. \textbf{Social choice changes evaluation:} report $V$, entrant access and worker-controlled capacity separately rather than equating revenue, willingness to pay and dignity. Challenge: compare credit-only and reservation-only conditions before combining them. \textbf{Mechanism design changes the institution:} use adjusted critical payments and pre-bid eligibility verification. Challenge: calculate the profitable false label and the conditional audit bound. All three lenses concern the same admission decision.
+
+\subsection{Open-source and adaptation record}
+The code implements the mechanism afresh in standard-library Python and plain JavaScript; no scheduler or robotics code is copied. Original source code is distributed under the included MIT license. Python runtime details are in \texttt{results.json}. OpenVLA's official project and repository, \url{https://openvla.github.io/} and \url{https://github.com/openvla/openvla}, provide application context; their code, model and dataset terms must be checked separately before a future experiment. The paper retains the supplied ACM class and bibliography style, whose notices remain in the source; the poster adapts the supplied course template. Neither third-party template nor scholarly material is relicensed by the code license. The public PS1 source informs continuity; private reflection images are not copied into the public demonstration.
+
+\section{Review response and revision record}
+\textbf{Inherited feedback: Keep and Revise.} Preserve the PS1 instructor's request to distinguish substantive participation from better explanations. The PS2 reservation assigns a real capacity right and the pilot varies explanation separately. Preserve the earlier request to clarify fairness; Sections 2--3 now distinguish firm value, operator access and worker authority. These are responses to documented PS1 inputs, not fabricated PS2 reviews.
+
+\textbf{Preparation checks: Revise.} Literature inspection ruled out an unsupported novelty claim about GPU auctions. The eligibility counterexample prompted a change from unverified status to prior verification. The incentive argument prompted recording regret alongside bid error. These are preparation revisions, not peer comments.
+
+\textbf{September 28 symposium: pending.} The symposium occurs after this September 27 review draft. No incoming PS2 reviews, reviewer names or outgoing review completions were supplied. Preserve the review version and record each actual comment, evidence, Keep/Revise/Investigate decision, changed location, responsible author and rerun result after the event. Sun must complete two assigned reviews himself. The September 30 version cannot truthfully be described as revised in response to future feedback.
+
+\clearpage
+\onecolumn
+\section{Structured abstract and cumulative proposal map}
+\begin{table}[h]
+\caption{Eight-row cumulative proposal map. The supplied PS1 map remains the prior version; this table describes only PS2.}
+\small\begin{tabularx}{\textwidth}{p{0.19\textwidth}Y}\toprule
+Proposal element & Current statement / change\\\midrule
+Background & Embodied-AI firms compete for scarce inference capacity. Private values introduce reporting incentives absent from PS1's assumed-truthful allocation. Established auction theory supplies the benchmark.\\
+Motivation and application & A proposed shared OpenVLA-based tabletop testbed allocates standardized inference windows to commercial tasks and worker-selected evaluations. Smaller integrators may lose access when willingness to pay alone determines allocation.\\
+Three connected questions & Economics: how do credits and reservations change distribution and revenue? Computation: can exact checks recover thresholds and identity failure? Behavior: does bidding reflect comprehension, indifference or legitimacy? Together: can access rights preserve value-reporting incentives under credible eligibility?\\
+Method and model assumptions & One-round sealed bids; unit demand; private values; fixed verified eligibility; quasilinear utility; committed coordinator. Rank credited bids and charge adjusted critical payments. Compare four rules at identical values and total capacity.\\
+Results or expected results & Obtained synthetic result: credit-only changes winners from $A,B$ to $A,E$, firm value 19 to 16 and revenue 12 to 14. Combined rights give a false-label gain of 4. The run passes 144,439 checks. Proposed: workload calibration and a counterbalanced behavioral pilot.\\
+Intellectual merits & Distinguishes truthful value reporting from truthful status, and operator preference from worker decision rights. A finite reproducible example exposes a governance requirement without claiming a new general auction theorem.\\
+Practical impacts & Potentially usable evaluation access for workers and smaller operators, conditional on feasible latency, eligibility verification and comprehension. Costs include displaced firm value and administration. Audit and appeal enable correction; actual human or environmental benefits remain unmeasured.\\
+Feedback received and revision made & PS1 instructor feedback motivates actual access rights. Sun's classroom statement motivates the private-value auction. Source checks narrow novelty; the computed false-label deviation changes eligibility governance; strategic indifference adds regret to the interface. PS2 symposium response remains future.\\\bottomrule
+\end{tabularx}
+\end{table}
+
+\clearpage
+\twocolumn
+\section{PS2 extension record}
+\subsection{Auction laboratory record}
+The classroom statement received from Sun supplies the setting, sealed-bid second-price rule, static/incomplete classification, truthful-value benchmark and three behavioral alternatives. It does not include a game URL, a participant-specific value, a planned or actual bid, payment, utility, revenue or a recorded outcome. These fields are unobserved rather than zero. The four computed treatments in Table~\ref{tab:results} are separate synthetic laboratory records with game identifier \texttt{compute-commons-inference-v1}. All use truthful planned and executed algorithmic bids $(10,9,6)$, fixed tie order $A,B,E$, $K=2$, and one sealed submission followed by allocation/payment and termination. Their allocations, payments, utilities, revenues and access measures are in \texttt{results.json}. They are computer-generated comparisons, not human play.
+
+The interface supports self-reflection and local peer entry: record treatment, own value, planned bid, belief about payment and confidence; submit a bid; view allocation/payment/utility; explain surprise and legitimacy; then export JSON. A consenting peer session should use aliases, independent private entry and no shared screen showing rival values before bids close. This static demonstration cannot securely enforce private multi-device play; a facilitator must collect sealed bids separately before entering them. The demo labels manual peer entry separately from synthetic opponents and transmits no responses to a server. Do not enter names, sensitive robot logs or proprietary values.
+
+\subsection{Artifact parity and deployment status}
+\begin{description}
+\item[Computational artifact.] The Python source, executed notebook, JSON outputs and CSV sweep share the same equations and example. The README gives the fresh-run command. The designated \href{https://github.com/dku-comsci-econ206-Autumn2026/-PS2-FP9-ComputeCommons}{classroom repository} exists; the connected integration rejected the PS2 upload (HTTP 403). A personal fork, pull request and release commit remain pending.
+\item[Behavioral artifact.] \texttt{hf\_space/} contains the static Hugging Face-ready interaction with the same allocation and payment logic, declared synthetic inputs and local reflection export. The designated \href{https://huggingface.co/spaces/dku-comsci-econ206-2026/Xinrong\_Sun}{Space} exists, but the connector has read access only. Its PS2 files have not been uploaded or verified; local execution is not claimed as deployment.
+\item[Interdisciplinary artifact.] The one-slide A0 poster summarizes the same question, four-rule comparison, eligibility boundary, proposed case, instructor, references and acknowledgments. The poster identifies the designated destinations and marks PS2 publication as pending.
+\end{description}
+
+\subsection{Symposium, practical-impact and final-review record}
+Review draft: September 27, 2026. Symposium: September 28, 2:45--5:15 p.m., IB 2050. Final revised deadline: September 30, 11:00 p.m. Beijing time. The presentation should defend the payment for $E$ under credit, explain why a worker reservation raises the entry threshold in the example, and demonstrate the false-label deviation. A useful reviewer question is whether protected access is meaningful when deadlines or budgets differ, and what observation would justify the admission abstraction.
+
+For the proposed testbed, record actual stakeholders, window specifications, task-selection authority, successful completed evaluations, displaced work, eligibility appeals and administration costs before interpreting value. A deployment partner and measured evidence remain to be established. Human approval must cover the proposal, code, interface, poster and final revision. This draft does not certify that review; after it occurs, the author should record its date, corrections and verification evidence in the final submission record.

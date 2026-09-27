@@ -1,0 +1,53 @@
+\section{Shared question and verified gap}
+Scarce high-quality inference capacity can determine which embodied-AI operators test robot tasks and whose needs enter deployment decisions. PS1 showed that binding access floors change allocation while consultation alone need not \cite{sun}. It assumed truthful inputs. Xinrong Sun's subsequent classroom proposal introduced private-value second-price bidding and an access-protected alternative. PS2 asks: \emph{Can access rights change who receives inference slots without sacrificing truthful value reporting, and what breaks when eligibility is unverifiable?}
+
+\textbf{Economics:} how do entrant credits and worker-selected reservations redistribute access, surplus and revenue? \textbf{Computation:} can exact allocation and deviation checks recover the relevant thresholds and failure cases? \textbf{Behavior:} does a departure from truthful bidding reflect payment-rule confusion or rejection of the access rule? Economics alone cannot establish comprehension; behavior alone cannot verify incentives; code alone cannot justify whose opportunities count.
+
+Vickrey's auction and single-parameter critical-payment theory already establish truthful bidding \cite{vickrey,roughgarden}. Themis already uses auctions for fair GPU scheduling, evaluating finish-time fairness on training workloads \cite{themis}. OpenVLA supplies a concrete robotics application, not an allocation institution \cite{openvla}. The bounded contribution is a reproducible institutional comparison separating worker decision rights, firm access and eligibility verification. Neither a new truthfulness theorem nor superior GPU scheduling is claimed. Appendix C compares the closest work dimension by dimension.
+
+\section{Strategic model and three lenses}
+A coordinator commits before bidding to $K$ identical inference windows, $r$ windows reserved for worker-selected supervised evaluations, and credit $c\geq0$ per eligible small operator. The auction has $q=K-r$ windows. Each of $n$ firms wants at most one, has private value $v_i\geq0$, reports $b_i\geq0$, and receives utility $u_i=v_ix_i-p_i$. Public, independently verified eligibility is $e_i\in\{0,1\}$. Admission presumes technical compatibility and a separate safety review. Payments use the same normalized units as values; bids are not safety scores.
+
+\textbf{Timing and information.} Firms observe the rule and their own value, then submit simultaneous sealed bids before one deadline. The coordinator ranks scores $s_i=b_i+ce_i$, selects the highest $q$ (or all $n$), charges once, and closes the round. Ties use a preannounced index order independent of bids. For a winner, let $t_i$ be the $q$th-highest rival score, or zero if fewer than $q$ rivals exist. Then
+\begin{equation}\label{eq:payment}
+ p_i=\max\{0,t_i-ce_i\},\qquad p_i=0\text{ for losers}.
+\end{equation}
+For $q=0$ nobody wins or pays. The baseline is $r=c=0$; at $q=1,c=0$ this is the classroom second-price auction. At larger $q$ it is its unit-demand multiunit extension.
+
+\textbf{Game theory.} This is a static incomplete-information game \cite{harsanyi}. For any common prior over private values, $b_i(v_i)=v_i$ is a Bayesian Nash equilibrium because it is weakly dominant for every rival report. No prior is needed to compute the dominant-strategy benchmark. With verified $e_i$, the threshold in (\ref{eq:payment}) does not depend on $b_i$; winning above one's value or losing below it cannot help. Appendix A gives the argument and its limits.
+
+\textbf{Social choice.} Incumbents prefer valuable commercial access; entrants seek entry opportunities; workers seek authority over evaluations; the coordinator needs service revenue. For fixed $r$, the rule maximizes $\sum_i(v_i+ce_i)x_i$ under unit demand and capacity. Credit $c$ expresses a public priority, not a measured external benefit. We report raw firm value $V=\sum_i v_ix_i$, entrant access and worker reservations separately. Sen motivates distinguishing resources from usable opportunities \cite{sen}; reserved capacity alone does not establish dignity or task safety.
+
+\textbf{Mechanism design.} Both credits and reservations change outcomes; critical payments preserve value incentives. A credit is a ranking adjustment, not a cash transfer. Eligibility and the rule must be fixed before bids; otherwise the proof does not protect access. The coordinator is a committed institution, not an additional strategic player.
+
+\section{Computation and auction comparison}
+The standard-library baseline sorts scores, assigns windows and computes critical payments in $O(n\log n)$ time. Exhaustive subsets independently check the allocation objective on a small grid. An actual fresh run passes 144,439 assertions, including unilateral deviations with rivals' reports varied independently of the bidder's true value. This finite test supports the implementation; the analytical argument covers the continuous reporting domain.
+
+\begin{table}[h]
+\caption{Actual synthetic outputs. $K=2$, $(v_A,v_B,v_E)=(10,9,6)$, $(e_A,e_B,e_E)=(0,0,1)$. $W$ is worker-reserved capacity, not measured use.}
+\centering\small
+\begin{tabular}{lcccrr}\toprule
+Rule $(r,c)$ & Winners & Payments & $W$ & $V$ & Revenue\\\midrule
+Standard $(0,0)$ & $A,B$ & $6,6$ & 0 & 19 & 12\\
+Credit $(0,4)$ & $A,E$ & $9,5$ & 0 & 16 & 14\\
+Reserve $(1,0)$ & $A$ & $9$ & 1 & 10 & 9\\
+Both $(1,5)$ & $E$ & $5$ & 1 & 6 & 5\\\bottomrule
+\end{tabular}\label{tab:results}
+\end{table}
+Winner utilities are respectively $(4,3)$, $(1,1)$, $(1)$ and $(1)$. Credit alone displaces $B$ at a firm-value cost of 3 but raises revenue by 2: access and revenue need not move oppositely. Reserving one window raises the entrant's winning-credit threshold from $c>3$ to $c>4$ in this profile. Under the combined rule, if $A$ falsely obtains eligible status, it wins, pays 6 and earns 4 rather than 0. Value truthfulness therefore does not establish identity truthfulness. An idealized independent audit with probability $a$ and additional fine $L$ deters this particular deviation only if $aL\geq4$; this is a stress test, not a solved audit institution.
+
+These results support publishing an access--value--revenue comparison and verifying eligibility before allocation. A reservation of one window is not yet a welfare improvement: its unmeasured worker benefit must be weighed against the displaced firm value. The analogy covers admission to standardized inference windows, not a robot's real-time control loop. Heterogeneous latency, repeated arrivals, budgets, common-value safety signals and complementarities remain outside the benchmark.
+
+\section{Behavior and interdisciplinary integration}
+Sun's author-supplied classroom statement identifies overbidding to win, underbidding from payment concern, and misunderstanding of second-price rules. It supplies design motivation, not observed bids or a treatment effect. Related evidence of misreporting in strategy-proof matching cautions against equating incentives with comprehension \cite{hassidim}; it is not evidence about these operators.
+
+The local Hugging Face-ready interaction records a prediction and bid before revealing payments, then asks for confidence, expected payment and perceived legitimacy. A planned counterbalanced pilot crosses a critical-payment tutorial with a worker-participation explanation while holding values and allocations fixed. Falling payment errors after instruction favors confusion; persistent rejection with correct payment understanding motivates testing legitimacy. Social desirability and learning remain competing explanations. Misreports with zero utility loss can reflect indifference, so the interface reports regret as well as bid error. This is a consequential revision to the classroom design. No peer-play dataset or human causal finding is asserted.
+
+\section{Contribution, practical impact and roadmap}
+The concrete proposed case is a shared OpenVLA-based tabletop manipulation testbed for embodied-AI firms, including smaller integrators, with worker-selected task evaluations. It is not a partnership or a deployment. The institution would reserve evaluation access before auctioning commercial windows; measured latency and task completion must first establish whether windows are interchangeable. Workers would choose evaluation tasks and challenge unused reservations; a public audit trail would permit allocation and eligibility appeals before the next round.
+
+Academia should require an auditable mechanism and falsifiable assumptions; industry should require measured task performance and costs; public institutions should require usable access and a correction route. The next study combines workload measurements, independently documented eligibility and a preregistered comprehension pilot. A defensible publication would need these additional results and a broader literature review; this proposal establishes a bounded starting point.
+
+\textbf{2056 contribution statement.} Building on Vickrey's incentives, Harsanyi's private information, Sen's opportunities and Pearl's distinction between intervention and observation \cite{pearl}, I aspire to develop accountable allocation institutions for embodied AI. Progress toward a contribution of Nobel- or Turing-recognized significance would require generalizable theory, verified systems and independently measured human benefit, rather than an award prediction.
+
+\textbf{Open science and SDGs.} Version \texttt{ps2-review-2026-09-27} supplies Python code, an executed notebook, outputs and a static interaction. Run \texttt{python model.py} in \texttt{code/}. Designated destinations are the \href{https://github.com/dku-comsci-econ206-Autumn2026/-PS2-FP9-ComputeCommons}{course GitHub repository} and \href{https://huggingface.co/spaces/dku-comsci-econ206-2026/Xinrong\_Sun}{Hugging Face Space}; PS2 upload and release-commit verification remain pending. The intended SDG 4 contribution is an accessible auction-learning exercise; assess explanation accuracy before claiming educational benefit.

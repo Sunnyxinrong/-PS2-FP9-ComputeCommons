@@ -1,0 +1,1319 @@
+{
+  "version": "ps2-review-2026-09-27",
+  "python": "3.12.14",
+  "values": [
+    10,
+    9,
+    6
+  ],
+  "eligibility": [
+    0,
+    0,
+    1
+  ],
+  "capacity": 2,
+  "treatments": {
+    "standard": {
+      "reserve": 0,
+      "credit": 0,
+      "winners": [
+        0,
+        1
+      ],
+      "payments": [
+        6,
+        6,
+        0
+      ],
+      "utilities": [
+        4,
+        3,
+        0
+      ],
+      "revenue": 12,
+      "firm_value": 19,
+      "entrant_slots": 0,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 6,
+      "scores": [
+        10,
+        9,
+        6
+      ],
+      "opportunity_cost": 0
+    },
+    "credit_only": {
+      "reserve": 0,
+      "credit": 4,
+      "winners": [
+        0,
+        2
+      ],
+      "payments": [
+        9,
+        0,
+        5
+      ],
+      "utilities": [
+        1,
+        0,
+        1
+      ],
+      "revenue": 14,
+      "firm_value": 16,
+      "entrant_slots": 1,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        10
+      ],
+      "opportunity_cost": 3
+    },
+    "reserve_only": {
+      "reserve": 1,
+      "credit": 0,
+      "winners": [
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        0
+      ],
+      "utilities": [
+        1,
+        0,
+        0
+      ],
+      "revenue": 9,
+      "firm_value": 10,
+      "entrant_slots": 0,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        6
+      ],
+      "opportunity_cost": 0
+    },
+    "combined": {
+      "reserve": 1,
+      "credit": 5,
+      "winners": [
+        2
+      ],
+      "payments": [
+        0,
+        0,
+        5
+      ],
+      "utilities": [
+        0,
+        0,
+        1
+      ],
+      "revenue": 5,
+      "firm_value": 6,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        11
+      ],
+      "opportunity_cost": 4
+    }
+  },
+  "sweep": [
+    {
+      "reserve": 0,
+      "credit": 0,
+      "winners": [
+        0,
+        1
+      ],
+      "payments": [
+        6,
+        6,
+        0
+      ],
+      "utilities": [
+        4,
+        3,
+        0
+      ],
+      "revenue": 12,
+      "firm_value": 19,
+      "entrant_slots": 0,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 6,
+      "scores": [
+        10,
+        9,
+        6
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 0,
+      "credit": 1,
+      "winners": [
+        0,
+        1
+      ],
+      "payments": [
+        7,
+        7,
+        0
+      ],
+      "utilities": [
+        3,
+        2,
+        0
+      ],
+      "revenue": 14,
+      "firm_value": 19,
+      "entrant_slots": 0,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 7,
+      "scores": [
+        10,
+        9,
+        7
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 0,
+      "credit": 2,
+      "winners": [
+        0,
+        1
+      ],
+      "payments": [
+        8,
+        8,
+        0
+      ],
+      "utilities": [
+        2,
+        1,
+        0
+      ],
+      "revenue": 16,
+      "firm_value": 19,
+      "entrant_slots": 0,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 8,
+      "scores": [
+        10,
+        9,
+        8
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 0,
+      "credit": 3,
+      "winners": [
+        0,
+        1
+      ],
+      "payments": [
+        9,
+        9,
+        0
+      ],
+      "utilities": [
+        1,
+        0,
+        0
+      ],
+      "revenue": 18,
+      "firm_value": 19,
+      "entrant_slots": 0,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        9
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 0,
+      "credit": 4,
+      "winners": [
+        0,
+        2
+      ],
+      "payments": [
+        9,
+        0,
+        5
+      ],
+      "utilities": [
+        1,
+        0,
+        1
+      ],
+      "revenue": 14,
+      "firm_value": 16,
+      "entrant_slots": 1,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        10
+      ],
+      "opportunity_cost": 3
+    },
+    {
+      "reserve": 0,
+      "credit": 5,
+      "winners": [
+        2,
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        4
+      ],
+      "utilities": [
+        1,
+        0,
+        2
+      ],
+      "revenue": 13,
+      "firm_value": 16,
+      "entrant_slots": 1,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        11
+      ],
+      "opportunity_cost": 3
+    },
+    {
+      "reserve": 0,
+      "credit": 6,
+      "winners": [
+        2,
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        3
+      ],
+      "utilities": [
+        1,
+        0,
+        3
+      ],
+      "revenue": 12,
+      "firm_value": 16,
+      "entrant_slots": 1,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        12
+      ],
+      "opportunity_cost": 3
+    },
+    {
+      "reserve": 0,
+      "credit": 7,
+      "winners": [
+        2,
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        2
+      ],
+      "utilities": [
+        1,
+        0,
+        4
+      ],
+      "revenue": 11,
+      "firm_value": 16,
+      "entrant_slots": 1,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        13
+      ],
+      "opportunity_cost": 3
+    },
+    {
+      "reserve": 0,
+      "credit": 8,
+      "winners": [
+        2,
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        1
+      ],
+      "utilities": [
+        1,
+        0,
+        5
+      ],
+      "revenue": 10,
+      "firm_value": 16,
+      "entrant_slots": 1,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        14
+      ],
+      "opportunity_cost": 3
+    },
+    {
+      "reserve": 0,
+      "credit": 9,
+      "winners": [
+        2,
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        0
+      ],
+      "utilities": [
+        1,
+        0,
+        6
+      ],
+      "revenue": 9,
+      "firm_value": 16,
+      "entrant_slots": 1,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        15
+      ],
+      "opportunity_cost": 3
+    },
+    {
+      "reserve": 0,
+      "credit": 10,
+      "winners": [
+        2,
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        0
+      ],
+      "utilities": [
+        1,
+        0,
+        6
+      ],
+      "revenue": 9,
+      "firm_value": 16,
+      "entrant_slots": 1,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        16
+      ],
+      "opportunity_cost": 3
+    },
+    {
+      "reserve": 0,
+      "credit": 11,
+      "winners": [
+        2,
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        0
+      ],
+      "utilities": [
+        1,
+        0,
+        6
+      ],
+      "revenue": 9,
+      "firm_value": 16,
+      "entrant_slots": 1,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        17
+      ],
+      "opportunity_cost": 3
+    },
+    {
+      "reserve": 0,
+      "credit": 12,
+      "winners": [
+        2,
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        0
+      ],
+      "utilities": [
+        1,
+        0,
+        6
+      ],
+      "revenue": 9,
+      "firm_value": 16,
+      "entrant_slots": 1,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        18
+      ],
+      "opportunity_cost": 3
+    },
+    {
+      "reserve": 1,
+      "credit": 0,
+      "winners": [
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        0
+      ],
+      "utilities": [
+        1,
+        0,
+        0
+      ],
+      "revenue": 9,
+      "firm_value": 10,
+      "entrant_slots": 0,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        6
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 1,
+      "credit": 1,
+      "winners": [
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        0
+      ],
+      "utilities": [
+        1,
+        0,
+        0
+      ],
+      "revenue": 9,
+      "firm_value": 10,
+      "entrant_slots": 0,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        7
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 1,
+      "credit": 2,
+      "winners": [
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        0
+      ],
+      "utilities": [
+        1,
+        0,
+        0
+      ],
+      "revenue": 9,
+      "firm_value": 10,
+      "entrant_slots": 0,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        8
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 1,
+      "credit": 3,
+      "winners": [
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        0
+      ],
+      "utilities": [
+        1,
+        0,
+        0
+      ],
+      "revenue": 9,
+      "firm_value": 10,
+      "entrant_slots": 0,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        9
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 1,
+      "credit": 4,
+      "winners": [
+        0
+      ],
+      "payments": [
+        10,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 10,
+      "firm_value": 10,
+      "entrant_slots": 0,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        10
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 1,
+      "credit": 5,
+      "winners": [
+        2
+      ],
+      "payments": [
+        0,
+        0,
+        5
+      ],
+      "utilities": [
+        0,
+        0,
+        1
+      ],
+      "revenue": 5,
+      "firm_value": 6,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        11
+      ],
+      "opportunity_cost": 4
+    },
+    {
+      "reserve": 1,
+      "credit": 6,
+      "winners": [
+        2
+      ],
+      "payments": [
+        0,
+        0,
+        4
+      ],
+      "utilities": [
+        0,
+        0,
+        2
+      ],
+      "revenue": 4,
+      "firm_value": 6,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        12
+      ],
+      "opportunity_cost": 4
+    },
+    {
+      "reserve": 1,
+      "credit": 7,
+      "winners": [
+        2
+      ],
+      "payments": [
+        0,
+        0,
+        3
+      ],
+      "utilities": [
+        0,
+        0,
+        3
+      ],
+      "revenue": 3,
+      "firm_value": 6,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        13
+      ],
+      "opportunity_cost": 4
+    },
+    {
+      "reserve": 1,
+      "credit": 8,
+      "winners": [
+        2
+      ],
+      "payments": [
+        0,
+        0,
+        2
+      ],
+      "utilities": [
+        0,
+        0,
+        4
+      ],
+      "revenue": 2,
+      "firm_value": 6,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        14
+      ],
+      "opportunity_cost": 4
+    },
+    {
+      "reserve": 1,
+      "credit": 9,
+      "winners": [
+        2
+      ],
+      "payments": [
+        0,
+        0,
+        1
+      ],
+      "utilities": [
+        0,
+        0,
+        5
+      ],
+      "revenue": 1,
+      "firm_value": 6,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        15
+      ],
+      "opportunity_cost": 4
+    },
+    {
+      "reserve": 1,
+      "credit": 10,
+      "winners": [
+        2
+      ],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        6
+      ],
+      "revenue": 0,
+      "firm_value": 6,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        16
+      ],
+      "opportunity_cost": 4
+    },
+    {
+      "reserve": 1,
+      "credit": 11,
+      "winners": [
+        2
+      ],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        6
+      ],
+      "revenue": 0,
+      "firm_value": 6,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        17
+      ],
+      "opportunity_cost": 4
+    },
+    {
+      "reserve": 1,
+      "credit": 12,
+      "winners": [
+        2
+      ],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        6
+      ],
+      "revenue": 0,
+      "firm_value": 6,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        18
+      ],
+      "opportunity_cost": 4
+    },
+    {
+      "reserve": 2,
+      "credit": 0,
+      "winners": [],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 0,
+      "firm_value": 0,
+      "entrant_slots": 0,
+      "worker_reserved": 2,
+      "firm_slots": 0,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        6
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 2,
+      "credit": 1,
+      "winners": [],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 0,
+      "firm_value": 0,
+      "entrant_slots": 0,
+      "worker_reserved": 2,
+      "firm_slots": 0,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        7
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 2,
+      "credit": 2,
+      "winners": [],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 0,
+      "firm_value": 0,
+      "entrant_slots": 0,
+      "worker_reserved": 2,
+      "firm_slots": 0,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        8
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 2,
+      "credit": 3,
+      "winners": [],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 0,
+      "firm_value": 0,
+      "entrant_slots": 0,
+      "worker_reserved": 2,
+      "firm_slots": 0,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        9
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 2,
+      "credit": 4,
+      "winners": [],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 0,
+      "firm_value": 0,
+      "entrant_slots": 0,
+      "worker_reserved": 2,
+      "firm_slots": 0,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        10
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 2,
+      "credit": 5,
+      "winners": [],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 0,
+      "firm_value": 0,
+      "entrant_slots": 0,
+      "worker_reserved": 2,
+      "firm_slots": 0,
+      "cutoff": 11,
+      "scores": [
+        10,
+        9,
+        11
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 2,
+      "credit": 6,
+      "winners": [],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 0,
+      "firm_value": 0,
+      "entrant_slots": 0,
+      "worker_reserved": 2,
+      "firm_slots": 0,
+      "cutoff": 12,
+      "scores": [
+        10,
+        9,
+        12
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 2,
+      "credit": 7,
+      "winners": [],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 0,
+      "firm_value": 0,
+      "entrant_slots": 0,
+      "worker_reserved": 2,
+      "firm_slots": 0,
+      "cutoff": 13,
+      "scores": [
+        10,
+        9,
+        13
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 2,
+      "credit": 8,
+      "winners": [],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 0,
+      "firm_value": 0,
+      "entrant_slots": 0,
+      "worker_reserved": 2,
+      "firm_slots": 0,
+      "cutoff": 14,
+      "scores": [
+        10,
+        9,
+        14
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 2,
+      "credit": 9,
+      "winners": [],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 0,
+      "firm_value": 0,
+      "entrant_slots": 0,
+      "worker_reserved": 2,
+      "firm_slots": 0,
+      "cutoff": 15,
+      "scores": [
+        10,
+        9,
+        15
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 2,
+      "credit": 10,
+      "winners": [],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 0,
+      "firm_value": 0,
+      "entrant_slots": 0,
+      "worker_reserved": 2,
+      "firm_slots": 0,
+      "cutoff": 16,
+      "scores": [
+        10,
+        9,
+        16
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 2,
+      "credit": 11,
+      "winners": [],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 0,
+      "firm_value": 0,
+      "entrant_slots": 0,
+      "worker_reserved": 2,
+      "firm_slots": 0,
+      "cutoff": 17,
+      "scores": [
+        10,
+        9,
+        17
+      ],
+      "opportunity_cost": 0
+    },
+    {
+      "reserve": 2,
+      "credit": 12,
+      "winners": [],
+      "payments": [
+        0,
+        0,
+        0
+      ],
+      "utilities": [
+        0,
+        0,
+        0
+      ],
+      "revenue": 0,
+      "firm_value": 0,
+      "entrant_slots": 0,
+      "worker_reserved": 2,
+      "firm_slots": 0,
+      "cutoff": 18,
+      "scores": [
+        10,
+        9,
+        18
+      ],
+      "opportunity_cost": 0
+    }
+  ],
+  "verification": {
+    "checks_passed": 144439,
+    "maximum_profitable_deviation_on_grid": 0,
+    "grid": "3 bidders; rivals reports, own value and own report in {0,1,2,3,4}; r in {0,1,2}; credit in {0,1,2,3,4}. Independent exhaustive allocation check."
+  },
+  "eligibility_stress": {
+    "honest": {
+      "winners": [
+        2
+      ],
+      "payments": [
+        0,
+        0,
+        5
+      ],
+      "utilities": [
+        0,
+        0,
+        1
+      ],
+      "revenue": 5,
+      "firm_value": 6,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        11
+      ],
+      "opportunity_cost": 4
+    },
+    "false_label": {
+      "winners": [
+        0
+      ],
+      "payments": [
+        6,
+        0,
+        0
+      ],
+      "utilities": [
+        4,
+        0,
+        0
+      ],
+      "revenue": 6,
+      "firm_value": 10,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 11,
+      "scores": [
+        15,
+        9,
+        11
+      ],
+      "opportunity_cost": 0
+    },
+    "gross_gain": 4,
+    "audit_threshold_if_fine_10": 0.4
+  },
+  "evidence": "Synthetic exact calculations; no human observations; no robot experiments."
+}

@@ -1,0 +1,1 @@
+433 checks passed. All 39 sweep settings match Python on all 11 result fields; the default interface submit handler displays revenue 14 and zero own regret. DOM stub, not full browser.

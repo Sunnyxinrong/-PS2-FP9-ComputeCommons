@@ -1,0 +1,187 @@
+Tool-executed verification, September 27 2026
+Python 3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]
+{
+  "treatments": {
+    "standard": {
+      "reserve": 0,
+      "credit": 0,
+      "winners": [
+        0,
+        1
+      ],
+      "payments": [
+        6,
+        6,
+        0
+      ],
+      "utilities": [
+        4,
+        3,
+        0
+      ],
+      "revenue": 12,
+      "firm_value": 19,
+      "entrant_slots": 0,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 6,
+      "scores": [
+        10,
+        9,
+        6
+      ],
+      "opportunity_cost": 0
+    },
+    "credit_only": {
+      "reserve": 0,
+      "credit": 4,
+      "winners": [
+        0,
+        2
+      ],
+      "payments": [
+        9,
+        0,
+        5
+      ],
+      "utilities": [
+        1,
+        0,
+        1
+      ],
+      "revenue": 14,
+      "firm_value": 16,
+      "entrant_slots": 1,
+      "worker_reserved": 0,
+      "firm_slots": 2,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        10
+      ],
+      "opportunity_cost": 3
+    },
+    "reserve_only": {
+      "reserve": 1,
+      "credit": 0,
+      "winners": [
+        0
+      ],
+      "payments": [
+        9,
+        0,
+        0
+      ],
+      "utilities": [
+        1,
+        0,
+        0
+      ],
+      "revenue": 9,
+      "firm_value": 10,
+      "entrant_slots": 0,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 9,
+      "scores": [
+        10,
+        9,
+        6
+      ],
+      "opportunity_cost": 0
+    },
+    "combined": {
+      "reserve": 1,
+      "credit": 5,
+      "winners": [
+        2
+      ],
+      "payments": [
+        0,
+        0,
+        5
+      ],
+      "utilities": [
+        0,
+        0,
+        1
+      ],
+      "revenue": 5,
+      "firm_value": 6,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        11
+      ],
+      "opportunity_cost": 4
+    }
+  },
+  "verification": {
+    "checks_passed": 144439,
+    "maximum_profitable_deviation_on_grid": 0,
+    "grid": "3 bidders; rivals reports, own value and own report in {0,1,2,3,4}; r in {0,1,2}; credit in {0,1,2,3,4}. Independent exhaustive allocation check."
+  },
+  "eligibility_stress": {
+    "honest": {
+      "winners": [
+        2
+      ],
+      "payments": [
+        0,
+        0,
+        5
+      ],
+      "utilities": [
+        0,
+        0,
+        1
+      ],
+      "revenue": 5,
+      "firm_value": 6,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 10,
+      "scores": [
+        10,
+        9,
+        11
+      ],
+      "opportunity_cost": 4
+    },
+    "false_label": {
+      "winners": [
+        0
+      ],
+      "payments": [
+        6,
+        0,
+        0
+      ],
+      "utilities": [
+        4,
+        0,
+        0
+      ],
+      "revenue": 6,
+      "firm_value": 10,
+      "entrant_slots": 1,
+      "worker_reserved": 1,
+      "firm_slots": 1,
+      "cutoff": 11,
+      "scores": [
+        15,
+        9,
+        11
+      ],
+      "opportunity_cost": 0
+    },
+    "gross_gain": 4,
+    "audit_threshold_if_fine_10": 0.4
+  }
+}
