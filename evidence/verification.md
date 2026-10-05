@@ -1,8 +1,12 @@
-# Verification record — 27 September 2026
+# Verification of robot revision, 2026-10-05
 
-- Python: 144,439 assertions passed; maximum profitable deviation on the specified grid was zero. Full execution output: `code/fresh-run.txt`; exact inputs and outputs: `code/results.json`.
-- JavaScript: 433 Python/JavaScript parity and DOM-handler checks passed. The DOM test uses a stub; it is not browser-rendering verification.
-- Proposal: compiled with Tectonic 0.17.0; eight pages, Sections 1–5 and teaser on pages 1–2. Author Notes and references begin on page 3; Appendices A–F follow. All pages rendered and visually inspected. Final log has no overfull boxes or undefined citations/references.
-- Poster: one editable slide, A0 landscape 1189 × 841 mm; two native tables; supplied template logo, typeface and layout retained. Package and geometry validators passed; rendered poster inspected. PDF is a raster export at approximately 201.6 DPI.
-- Deployment: GitHub destination exists but integration returned HTTP 403; Hugging Face connector read-only; Overleaf browser interaction repeatedly timed out. No remote update is certified in this record.
-- Evidence: synthetic calculations; no robot runs or collected human bidding data. The author supplied the research direction and classroom statement. Independent human review of the completed artifacts is not yet recorded.
+- Python robot_model.py executed successfully: 36,289 assertions; 300 paired synthetic instances.
+- Independent permutation enumeration checks EDF feasibility on the small integer grid.
+- Bid deviations verify the fixed-public-input mechanism on a finite grid; the manuscript supplies the continuous-domain argument.
+- Six worked treatments agree across Python and JavaScript (60 field comparisons).
+- A real headless Edge browser exercised feasible admission, the late-result negative utility, ablation comparison and local reflection download with no JavaScript errors. These automated interactions are not participant evidence.
+- The notebook embeds the tested source. It changes only the output directory for notebook use.
+- The manuscript is compiled from supplied ACM/course source with portable Tectonic/XeTeX; the poster is exported from editable PowerPoint to PDF.
+- Final human review, symposium records and instructor-shared Overleaf compilation are separate requirements and are not certified by these automated checks.
+
+Earlier logs and model.py/results.json refer to the preserved interchangeable-window baseline. Current results are robot_results.json and robot_sweep.csv.

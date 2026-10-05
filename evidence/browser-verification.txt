@@ -1,0 +1,1 @@
+PASS: feasible result, generic negative utility, ablation, reflection export and no JavaScript errors. Automated synthetic interaction only; not participant evidence.

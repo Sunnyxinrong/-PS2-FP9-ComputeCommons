@@ -1,25 +1,20 @@
 ---
-title: Compute Commons Inference Auction
+title: Compute Commons Robot Inference
 emoji: 🤖
 colorFrom: blue
 colorTo: green
 sdk: static
+app_file: index.html
 pinned: false
 license: mit
 ---
 
-# Compute Commons: access rights in embodied-AI inference auctions
+# Compute Commons: Usable Access to Robot Inference
 
-Xinrong Sun, FP9, COMSCI/ECON 206, instructor Professor Luyao Zhang.
+FP9, Xinrong Sun. Research revision 2026-10-05.
 
-Open `index.html` locally with `model.js` beside it. No installation, login or API key is needed. This directory is ready for a Hugging Face static Space. A local build does not establish that the Space has been deployed.
+Synthetic robot-state scheduling and auction demonstration. Predict payment and timely completion before seeing the result; export an anonymous reflection locally. No responses are uploaded. Manual peer entry requires a facilitator to collect sealed bids separately. No robot trials or human findings are claimed.
 
-The interface uses the paper's private-value, unit-demand mechanism, with two slots, worker reservation `r`, verified entrant credit `c`, fixed tie order A/B/E and critical payments. It structures prediction, a sealed own bid, explanation and local reflection export. Synthetic opponents are the default; manual peer entry is explicitly labeled. A facilitator must collect bids privately before entering them: this static page is not a secure multiplayer server.
+`robot.js` matches the Python model in the team repository. `model.js` is the retained legacy demonstration and is not loaded by this revision.
 
-## Evidence and privacy
-
-All example inputs are synthetic. No human data, actual robot performance or causal behavioral result is supplied. Responses remain in page memory until the participant chooses to export JSON. The app sends no telemetry or response uploads; the hosting service may keep its own normal access logs. Use aliases and fictional task values. Do not enter personal information or proprietary robot logs. Refreshing clears the in-memory round record.
-
-The planned pilot distinguishes payment confusion from legitimacy concerns and ordinary payoff indifference. Tutorial and explanation comparisons remain planned; this demonstration is not a randomized study engine. Record signed bid error and utility regret separately. Truthfulness applies to values conditional on verified identity and a committed rule, not to unverifiable eligibility.
-
-MIT applies to original code. Source concepts: Vickrey (1961), DOI 10.1111/j.1540-6261.1961.tb02789.x; Roughgarden, CS364A Lecture 3, https://timroughgarden.org/f13/l/l3.pdf. Application: https://openvla.github.io/. AI assistance is disclosed in the paper.
+Source: https://github.com/dku-comsci-econ206-Autumn2026/-PS2-FP9-ComputeCommons

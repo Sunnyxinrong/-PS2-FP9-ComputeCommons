@@ -1,0 +1,7 @@
+__pycache__/
+*.aux
+*.log
+*.blg
+*.out
+*.xdv
+main.pdf

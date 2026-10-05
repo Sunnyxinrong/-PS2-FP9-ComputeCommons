@@ -1,0 +1,1713 @@
+{
+  "version": "ps2-robot-revision-2026-10-05",
+  "python": "3.12.14",
+  "evidence": "Synthetic snapshot scheduling; no trained policy, robot trials, or human observations.",
+  "inputs": [
+    {
+      "id": "A",
+      "value": 10,
+      "eligible": 0,
+      "service_ms": 200,
+      "buffer_steps": 2,
+      "period_ms": 100,
+      "tolerance_mm": 20,
+      "speed_mm_s": 50,
+      "network_ms": 0
+    },
+    {
+      "id": "B",
+      "value": 9,
+      "eligible": 0,
+      "service_ms": 200,
+      "buffer_steps": 4,
+      "period_ms": 100,
+      "tolerance_mm": 10,
+      "speed_mm_s": 50,
+      "network_ms": 0
+    },
+    {
+      "id": "D",
+      "value": 8,
+      "eligible": 0,
+      "service_ms": 200,
+      "buffer_steps": 4,
+      "period_ms": 100,
+      "tolerance_mm": 20,
+      "speed_mm_s": 50,
+      "network_ms": 0
+    },
+    {
+      "id": "E",
+      "value": 6,
+      "eligible": 1,
+      "service_ms": 200,
+      "buffer_steps": 4,
+      "period_ms": 100,
+      "tolerance_mm": 20,
+      "speed_mm_s": 50,
+      "network_ms": 0
+    }
+  ],
+  "worked": {
+    "generic": {
+      "allocated": [
+        "A",
+        "B"
+      ],
+      "order": [
+        "A",
+        "B"
+      ],
+      "completed": [
+        "A"
+      ],
+      "payments": [
+        8,
+        8,
+        0.0,
+        0.0
+      ],
+      "utilities": [
+        2,
+        -8,
+        0.0,
+        0.0
+      ],
+      "realized_value": 10,
+      "nominal_value": 19,
+      "revenue": 16.0,
+      "usable_entrant_access": 0,
+      "nominal_entrant_access": 0,
+      "late_jobs": 1,
+      "wasted_ms": 200,
+      "reserve_ms": 0,
+      "details": [
+        {
+          "id": "A",
+          "finish_ms": 200,
+          "deadline_ms": 200,
+          "timely": true
+        },
+        {
+          "id": "B",
+          "finish_ms": 400,
+          "deadline_ms": 200.0,
+          "timely": false
+        }
+      ]
+    },
+    "edf": {
+      "allocated": [
+        "A",
+        "D"
+      ],
+      "order": [
+        "A",
+        "D"
+      ],
+      "completed": [
+        "A",
+        "D"
+      ],
+      "payments": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "utilities": [
+        10.0,
+        0.0,
+        8.0,
+        0.0
+      ],
+      "realized_value": 18,
+      "nominal_value": 18,
+      "revenue": 0.0,
+      "usable_entrant_access": 0,
+      "nominal_entrant_access": 0,
+      "late_jobs": 0,
+      "wasted_ms": 0,
+      "reserve_ms": 0,
+      "details": [
+        {
+          "id": "A",
+          "finish_ms": 200,
+          "deadline_ms": 200,
+          "timely": true
+        },
+        {
+          "id": "D",
+          "finish_ms": 400,
+          "deadline_ms": 400,
+          "timely": true
+        }
+      ]
+    },
+    "feasible": {
+      "allocated": [
+        "A",
+        "D"
+      ],
+      "order": [
+        "A",
+        "D"
+      ],
+      "completed": [
+        "A",
+        "D"
+      ],
+      "payments": [
+        9,
+        0.0,
+        6,
+        0.0
+      ],
+      "utilities": [
+        1,
+        0.0,
+        2,
+        0.0
+      ],
+      "realized_value": 18,
+      "nominal_value": 18,
+      "revenue": 15.0,
+      "usable_entrant_access": 0,
+      "nominal_entrant_access": 0,
+      "late_jobs": 0,
+      "wasted_ms": 0,
+      "reserve_ms": 0,
+      "details": [
+        {
+          "id": "A",
+          "finish_ms": 200,
+          "deadline_ms": 200,
+          "timely": true
+        },
+        {
+          "id": "D",
+          "finish_ms": 400,
+          "deadline_ms": 400,
+          "timely": true
+        }
+      ]
+    },
+    "credit": {
+      "allocated": [
+        "A",
+        "E"
+      ],
+      "order": [
+        "A",
+        "E"
+      ],
+      "completed": [
+        "A",
+        "E"
+      ],
+      "payments": [
+        9,
+        0.0,
+        0.0,
+        5
+      ],
+      "utilities": [
+        1,
+        0.0,
+        0.0,
+        1
+      ],
+      "realized_value": 16,
+      "nominal_value": 16,
+      "revenue": 14.0,
+      "usable_entrant_access": 1,
+      "nominal_entrant_access": 1,
+      "late_jobs": 0,
+      "wasted_ms": 0,
+      "reserve_ms": 0,
+      "details": [
+        {
+          "id": "A",
+          "finish_ms": 200,
+          "deadline_ms": 200,
+          "timely": true
+        },
+        {
+          "id": "E",
+          "finish_ms": 400,
+          "deadline_ms": 400,
+          "timely": true
+        }
+      ]
+    },
+    "reserve": {
+      "allocated": [
+        "A"
+      ],
+      "order": [
+        "A"
+      ],
+      "completed": [
+        "A"
+      ],
+      "payments": [
+        9,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "utilities": [
+        1,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "realized_value": 10,
+      "nominal_value": 10,
+      "revenue": 9.0,
+      "usable_entrant_access": 0,
+      "nominal_entrant_access": 0,
+      "late_jobs": 0,
+      "wasted_ms": 0,
+      "reserve_ms": 100,
+      "details": [
+        {
+          "id": "A",
+          "finish_ms": 200,
+          "deadline_ms": 200,
+          "timely": true
+        }
+      ]
+    },
+    "combined": {
+      "allocated": [
+        "E"
+      ],
+      "order": [
+        "E"
+      ],
+      "completed": [
+        "E"
+      ],
+      "payments": [
+        0.0,
+        0.0,
+        0.0,
+        5
+      ],
+      "utilities": [
+        0.0,
+        0.0,
+        0.0,
+        1
+      ],
+      "realized_value": 6,
+      "nominal_value": 6,
+      "revenue": 5.0,
+      "usable_entrant_access": 1,
+      "nominal_entrant_access": 1,
+      "late_jobs": 0,
+      "wasted_ms": 0,
+      "reserve_ms": 100,
+      "details": [
+        {
+          "id": "E",
+          "finish_ms": 200,
+          "deadline_ms": 400,
+          "timely": true
+        }
+      ]
+    }
+  },
+  "verification": {
+    "assertions": 36289,
+    "maximum_positive_gain": 0,
+    "scope": "Finite report grid; analytical proof required for all real bids."
+  },
+  "random_design": {
+    "seed": 206,
+    "n_instances": 300,
+    "n_robots": 6,
+    "horizon_ms": 600
+  },
+  "summary": {
+    "generic": {
+      "realized_value": 21.3,
+      "revenue": 14.29,
+      "usable_entrant_access": 0.55,
+      "late_jobs": 2.9233333333333333,
+      "wasted_ms": 378.1666666666667
+    },
+    "edf": {
+      "realized_value": 38.85666666666667,
+      "revenue": 0.0,
+      "usable_entrant_access": 1.17,
+      "late_jobs": 0.0,
+      "wasted_ms": 0.0
+    },
+    "feasible": {
+      "realized_value": 43.056666666666665,
+      "revenue": 8.74,
+      "usable_entrant_access": 1.19,
+      "late_jobs": 0.0,
+      "wasted_ms": 0.0
+    },
+    "credit": {
+      "realized_value": 42.99333333333333,
+      "revenue": 8.433333333333334,
+      "usable_entrant_access": 1.2633333333333334,
+      "late_jobs": 0.0,
+      "wasted_ms": 0.0
+    }
+  },
+  "paired": {
+    "generic": {
+      "mean_difference": 21.756666666666668,
+      "mc_interval_95": [
+        20.04879009979916,
+        23.464543233534176
+      ]
+    },
+    "edf": {
+      "mean_difference": 4.2,
+      "mc_interval_95": [
+        3.497841366260996,
+        4.902158633739004
+      ]
+    }
+  },
+  "ablations": {
+    "full": {
+      "generic": {
+        "allocated": [
+          "A",
+          "B"
+        ],
+        "order": [
+          "A",
+          "B"
+        ],
+        "completed": [
+          "A"
+        ],
+        "payments": [
+          8,
+          8,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          2,
+          -8,
+          0.0,
+          0.0
+        ],
+        "realized_value": 10,
+        "nominal_value": 19,
+        "revenue": 16.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 1,
+        "wasted_ms": 200,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 200,
+            "timely": true
+          },
+          {
+            "id": "B",
+            "finish_ms": 400,
+            "deadline_ms": 200.0,
+            "timely": false
+          }
+        ]
+      },
+      "edf": {
+        "allocated": [
+          "A",
+          "D"
+        ],
+        "order": [
+          "A",
+          "D"
+        ],
+        "completed": [
+          "A",
+          "D"
+        ],
+        "payments": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          10.0,
+          0.0,
+          8.0,
+          0.0
+        ],
+        "realized_value": 18,
+        "nominal_value": 18,
+        "revenue": 0.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 200,
+            "timely": true
+          },
+          {
+            "id": "D",
+            "finish_ms": 400,
+            "deadline_ms": 400,
+            "timely": true
+          }
+        ]
+      },
+      "feasible": {
+        "allocated": [
+          "A",
+          "D"
+        ],
+        "order": [
+          "A",
+          "D"
+        ],
+        "completed": [
+          "A",
+          "D"
+        ],
+        "payments": [
+          9,
+          0.0,
+          6,
+          0.0
+        ],
+        "utilities": [
+          1,
+          0.0,
+          2,
+          0.0
+        ],
+        "realized_value": 18,
+        "nominal_value": 18,
+        "revenue": 15.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 200,
+            "timely": true
+          },
+          {
+            "id": "D",
+            "finish_ms": 400,
+            "deadline_ms": 400,
+            "timely": true
+          }
+        ]
+      },
+      "credit": {
+        "allocated": [
+          "A",
+          "E"
+        ],
+        "order": [
+          "A",
+          "E"
+        ],
+        "completed": [
+          "A",
+          "E"
+        ],
+        "payments": [
+          9,
+          0.0,
+          0.0,
+          5
+        ],
+        "utilities": [
+          1,
+          0.0,
+          0.0,
+          1
+        ],
+        "realized_value": 16,
+        "nominal_value": 16,
+        "revenue": 14.0,
+        "usable_entrant_access": 1,
+        "nominal_entrant_access": 1,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 200,
+            "timely": true
+          },
+          {
+            "id": "E",
+            "finish_ms": 400,
+            "deadline_ms": 400,
+            "timely": true
+          }
+        ]
+      },
+      "reserve": {
+        "allocated": [
+          "A"
+        ],
+        "order": [
+          "A"
+        ],
+        "completed": [
+          "A"
+        ],
+        "payments": [
+          9,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "realized_value": 10,
+        "nominal_value": 10,
+        "revenue": 9.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 100,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 200,
+            "timely": true
+          }
+        ]
+      },
+      "combined": {
+        "allocated": [
+          "E"
+        ],
+        "order": [
+          "E"
+        ],
+        "completed": [
+          "E"
+        ],
+        "payments": [
+          0.0,
+          0.0,
+          0.0,
+          5
+        ],
+        "utilities": [
+          0.0,
+          0.0,
+          0.0,
+          1
+        ],
+        "realized_value": 6,
+        "nominal_value": 6,
+        "revenue": 5.0,
+        "usable_entrant_access": 1,
+        "nominal_entrant_access": 1,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 100,
+        "details": [
+          {
+            "id": "E",
+            "finish_ms": 200,
+            "deadline_ms": 400,
+            "timely": true
+          }
+        ]
+      }
+    },
+    "no_queue": {
+      "generic": {
+        "allocated": [
+          "A",
+          "B"
+        ],
+        "order": [
+          "B",
+          "A"
+        ],
+        "completed": [
+          "B",
+          "A"
+        ],
+        "payments": [
+          8,
+          8,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          2,
+          1,
+          0.0,
+          0.0
+        ],
+        "realized_value": 19,
+        "nominal_value": 19,
+        "revenue": 16.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "B",
+            "finish_ms": 200,
+            "deadline_ms": 200.0,
+            "timely": true
+          },
+          {
+            "id": "A",
+            "finish_ms": 400,
+            "deadline_ms": 400.0,
+            "timely": true
+          }
+        ]
+      },
+      "edf": {
+        "allocated": [
+          "B",
+          "A"
+        ],
+        "order": [
+          "B",
+          "A"
+        ],
+        "completed": [
+          "B",
+          "A"
+        ],
+        "payments": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          10.0,
+          9.0,
+          0.0,
+          0.0
+        ],
+        "realized_value": 19,
+        "nominal_value": 19,
+        "revenue": 0.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "B",
+            "finish_ms": 200,
+            "deadline_ms": 200.0,
+            "timely": true
+          },
+          {
+            "id": "A",
+            "finish_ms": 400,
+            "deadline_ms": 400.0,
+            "timely": true
+          }
+        ]
+      },
+      "feasible": {
+        "allocated": [
+          "A",
+          "B"
+        ],
+        "order": [
+          "B",
+          "A"
+        ],
+        "completed": [
+          "B",
+          "A"
+        ],
+        "payments": [
+          8,
+          8,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          2,
+          1,
+          0.0,
+          0.0
+        ],
+        "realized_value": 19,
+        "nominal_value": 19,
+        "revenue": 16.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "B",
+            "finish_ms": 200,
+            "deadline_ms": 200.0,
+            "timely": true
+          },
+          {
+            "id": "A",
+            "finish_ms": 400,
+            "deadline_ms": 400.0,
+            "timely": true
+          }
+        ]
+      },
+      "credit": {
+        "allocated": [
+          "A",
+          "B"
+        ],
+        "order": [
+          "B",
+          "A"
+        ],
+        "completed": [
+          "B",
+          "A"
+        ],
+        "payments": [
+          9,
+          9,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          1,
+          0,
+          0.0,
+          0.0
+        ],
+        "realized_value": 19,
+        "nominal_value": 19,
+        "revenue": 18.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "B",
+            "finish_ms": 200,
+            "deadline_ms": 200.0,
+            "timely": true
+          },
+          {
+            "id": "A",
+            "finish_ms": 400,
+            "deadline_ms": 400.0,
+            "timely": true
+          }
+        ]
+      },
+      "reserve": {
+        "allocated": [
+          "A"
+        ],
+        "order": [
+          "A"
+        ],
+        "completed": [
+          "A"
+        ],
+        "payments": [
+          9,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "realized_value": 10,
+        "nominal_value": 10,
+        "revenue": 9.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 100,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 400.0,
+            "timely": true
+          }
+        ]
+      },
+      "combined": {
+        "allocated": [
+          "E"
+        ],
+        "order": [
+          "E"
+        ],
+        "completed": [
+          "E"
+        ],
+        "payments": [
+          0.0,
+          0.0,
+          0.0,
+          5
+        ],
+        "utilities": [
+          0.0,
+          0.0,
+          0.0,
+          1
+        ],
+        "realized_value": 6,
+        "nominal_value": 6,
+        "revenue": 5.0,
+        "usable_entrant_access": 1,
+        "nominal_entrant_access": 1,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 100,
+        "details": [
+          {
+            "id": "E",
+            "finish_ms": 200,
+            "deadline_ms": 400.0,
+            "timely": true
+          }
+        ]
+      }
+    },
+    "no_freshness": {
+      "generic": {
+        "allocated": [
+          "A",
+          "B"
+        ],
+        "order": [
+          "A",
+          "B"
+        ],
+        "completed": [
+          "A",
+          "B"
+        ],
+        "payments": [
+          8,
+          8,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          2,
+          1,
+          0.0,
+          0.0
+        ],
+        "realized_value": 19,
+        "nominal_value": 19,
+        "revenue": 16.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 200,
+            "timely": true
+          },
+          {
+            "id": "B",
+            "finish_ms": 400,
+            "deadline_ms": 400,
+            "timely": true
+          }
+        ]
+      },
+      "edf": {
+        "allocated": [
+          "A",
+          "B"
+        ],
+        "order": [
+          "A",
+          "B"
+        ],
+        "completed": [
+          "A",
+          "B"
+        ],
+        "payments": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          10.0,
+          9.0,
+          0.0,
+          0.0
+        ],
+        "realized_value": 19,
+        "nominal_value": 19,
+        "revenue": 0.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 200,
+            "timely": true
+          },
+          {
+            "id": "B",
+            "finish_ms": 400,
+            "deadline_ms": 400,
+            "timely": true
+          }
+        ]
+      },
+      "feasible": {
+        "allocated": [
+          "A",
+          "B"
+        ],
+        "order": [
+          "A",
+          "B"
+        ],
+        "completed": [
+          "A",
+          "B"
+        ],
+        "payments": [
+          8,
+          8,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          2,
+          1,
+          0.0,
+          0.0
+        ],
+        "realized_value": 19,
+        "nominal_value": 19,
+        "revenue": 16.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 200,
+            "timely": true
+          },
+          {
+            "id": "B",
+            "finish_ms": 400,
+            "deadline_ms": 400,
+            "timely": true
+          }
+        ]
+      },
+      "credit": {
+        "allocated": [
+          "A",
+          "B"
+        ],
+        "order": [
+          "A",
+          "B"
+        ],
+        "completed": [
+          "A",
+          "B"
+        ],
+        "payments": [
+          9,
+          9,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          1,
+          0,
+          0.0,
+          0.0
+        ],
+        "realized_value": 19,
+        "nominal_value": 19,
+        "revenue": 18.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 200,
+            "timely": true
+          },
+          {
+            "id": "B",
+            "finish_ms": 400,
+            "deadline_ms": 400,
+            "timely": true
+          }
+        ]
+      },
+      "reserve": {
+        "allocated": [
+          "A"
+        ],
+        "order": [
+          "A"
+        ],
+        "completed": [
+          "A"
+        ],
+        "payments": [
+          9,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "realized_value": 10,
+        "nominal_value": 10,
+        "revenue": 9.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 100,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 200,
+            "timely": true
+          }
+        ]
+      },
+      "combined": {
+        "allocated": [
+          "E"
+        ],
+        "order": [
+          "E"
+        ],
+        "completed": [
+          "E"
+        ],
+        "payments": [
+          0.0,
+          0.0,
+          0.0,
+          5
+        ],
+        "utilities": [
+          0.0,
+          0.0,
+          0.0,
+          1
+        ],
+        "realized_value": 6,
+        "nominal_value": 6,
+        "revenue": 5.0,
+        "usable_entrant_access": 1,
+        "nominal_entrant_access": 1,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 100,
+        "details": [
+          {
+            "id": "E",
+            "finish_ms": 200,
+            "deadline_ms": 400,
+            "timely": true
+          }
+        ]
+      }
+    },
+    "neither": {
+      "generic": {
+        "allocated": [
+          "A",
+          "B"
+        ],
+        "order": [
+          "A",
+          "B"
+        ],
+        "completed": [
+          "A",
+          "B"
+        ],
+        "payments": [
+          8,
+          8,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          2,
+          1,
+          0.0,
+          0.0
+        ],
+        "realized_value": 19,
+        "nominal_value": 19,
+        "revenue": 16.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 10000,
+            "timely": true
+          },
+          {
+            "id": "B",
+            "finish_ms": 400,
+            "deadline_ms": 10000,
+            "timely": true
+          }
+        ]
+      },
+      "edf": {
+        "allocated": [
+          "A",
+          "B"
+        ],
+        "order": [
+          "A",
+          "B"
+        ],
+        "completed": [
+          "A",
+          "B"
+        ],
+        "payments": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          10.0,
+          9.0,
+          0.0,
+          0.0
+        ],
+        "realized_value": 19,
+        "nominal_value": 19,
+        "revenue": 0.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 10000,
+            "timely": true
+          },
+          {
+            "id": "B",
+            "finish_ms": 400,
+            "deadline_ms": 10000,
+            "timely": true
+          }
+        ]
+      },
+      "feasible": {
+        "allocated": [
+          "A",
+          "B"
+        ],
+        "order": [
+          "A",
+          "B"
+        ],
+        "completed": [
+          "A",
+          "B"
+        ],
+        "payments": [
+          8,
+          8,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          2,
+          1,
+          0.0,
+          0.0
+        ],
+        "realized_value": 19,
+        "nominal_value": 19,
+        "revenue": 16.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 10000,
+            "timely": true
+          },
+          {
+            "id": "B",
+            "finish_ms": 400,
+            "deadline_ms": 10000,
+            "timely": true
+          }
+        ]
+      },
+      "credit": {
+        "allocated": [
+          "A",
+          "B"
+        ],
+        "order": [
+          "A",
+          "B"
+        ],
+        "completed": [
+          "A",
+          "B"
+        ],
+        "payments": [
+          9,
+          9,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          1,
+          0,
+          0.0,
+          0.0
+        ],
+        "realized_value": 19,
+        "nominal_value": 19,
+        "revenue": 18.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 0,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 10000,
+            "timely": true
+          },
+          {
+            "id": "B",
+            "finish_ms": 400,
+            "deadline_ms": 10000,
+            "timely": true
+          }
+        ]
+      },
+      "reserve": {
+        "allocated": [
+          "A"
+        ],
+        "order": [
+          "A"
+        ],
+        "completed": [
+          "A"
+        ],
+        "payments": [
+          9,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "utilities": [
+          1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "realized_value": 10,
+        "nominal_value": 10,
+        "revenue": 9.0,
+        "usable_entrant_access": 0,
+        "nominal_entrant_access": 0,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 100,
+        "details": [
+          {
+            "id": "A",
+            "finish_ms": 200,
+            "deadline_ms": 10000,
+            "timely": true
+          }
+        ]
+      },
+      "combined": {
+        "allocated": [
+          "E"
+        ],
+        "order": [
+          "E"
+        ],
+        "completed": [
+          "E"
+        ],
+        "payments": [
+          0.0,
+          0.0,
+          0.0,
+          5
+        ],
+        "utilities": [
+          0.0,
+          0.0,
+          0.0,
+          1
+        ],
+        "realized_value": 6,
+        "nominal_value": 6,
+        "revenue": 5.0,
+        "usable_entrant_access": 1,
+        "nominal_entrant_access": 1,
+        "late_jobs": 0,
+        "wasted_ms": 0,
+        "reserve_ms": 100,
+        "details": [
+          {
+            "id": "E",
+            "finish_ms": 200,
+            "deadline_ms": 10000,
+            "timely": true
+          }
+        ]
+      }
+    }
+  },
+  "network_stress": {
+    "0": {
+      "allocated": [
+        "A",
+        "D"
+      ],
+      "order": [
+        "A",
+        "D"
+      ],
+      "completed": [
+        "A",
+        "D"
+      ],
+      "payments": [
+        9,
+        0.0,
+        6,
+        0.0
+      ],
+      "utilities": [
+        1,
+        0.0,
+        2,
+        0.0
+      ],
+      "realized_value": 18,
+      "nominal_value": 18,
+      "revenue": 15.0,
+      "usable_entrant_access": 0,
+      "nominal_entrant_access": 0,
+      "late_jobs": 0,
+      "wasted_ms": 0,
+      "reserve_ms": 0,
+      "details": [
+        {
+          "id": "A",
+          "finish_ms": 200,
+          "deadline_ms": 200,
+          "timely": true
+        },
+        {
+          "id": "D",
+          "finish_ms": 400,
+          "deadline_ms": 400,
+          "timely": true
+        }
+      ]
+    },
+    "25": {
+      "allocated": [
+        "D"
+      ],
+      "order": [
+        "D"
+      ],
+      "completed": [
+        "D"
+      ],
+      "payments": [
+        0.0,
+        0.0,
+        6,
+        0.0
+      ],
+      "utilities": [
+        0.0,
+        0.0,
+        2,
+        0.0
+      ],
+      "realized_value": 8,
+      "nominal_value": 8,
+      "revenue": 6.0,
+      "usable_entrant_access": 0,
+      "nominal_entrant_access": 0,
+      "late_jobs": 0,
+      "wasted_ms": 0,
+      "reserve_ms": 0,
+      "details": [
+        {
+          "id": "D",
+          "finish_ms": 200,
+          "deadline_ms": 375,
+          "timely": true
+        }
+      ]
+    },
+    "50": {
+      "allocated": [
+        "D"
+      ],
+      "order": [
+        "D"
+      ],
+      "completed": [
+        "D"
+      ],
+      "payments": [
+        0.0,
+        0.0,
+        6,
+        0.0
+      ],
+      "utilities": [
+        0.0,
+        0.0,
+        2,
+        0.0
+      ],
+      "realized_value": 8,
+      "nominal_value": 8,
+      "revenue": 6.0,
+      "usable_entrant_access": 0,
+      "nominal_entrant_access": 0,
+      "late_jobs": 0,
+      "wasted_ms": 0,
+      "reserve_ms": 0,
+      "details": [
+        {
+          "id": "D",
+          "finish_ms": 200,
+          "deadline_ms": 350,
+          "timely": true
+        }
+      ]
+    },
+    "100": {
+      "allocated": [
+        "D"
+      ],
+      "order": [
+        "D"
+      ],
+      "completed": [
+        "D"
+      ],
+      "payments": [
+        0.0,
+        0.0,
+        6,
+        0.0
+      ],
+      "utilities": [
+        0.0,
+        0.0,
+        2,
+        0.0
+      ],
+      "realized_value": 8,
+      "nominal_value": 8,
+      "revenue": 6.0,
+      "usable_entrant_access": 0,
+      "nominal_entrant_access": 0,
+      "late_jobs": 0,
+      "wasted_ms": 0,
+      "reserve_ms": 0,
+      "details": [
+        {
+          "id": "D",
+          "finish_ms": 200,
+          "deadline_ms": 300,
+          "timely": true
+        }
+      ]
+    },
+    "150": {
+      "allocated": [
+        "D"
+      ],
+      "order": [
+        "D"
+      ],
+      "completed": [
+        "D"
+      ],
+      "payments": [
+        0.0,
+        0.0,
+        6,
+        0.0
+      ],
+      "utilities": [
+        0.0,
+        0.0,
+        2,
+        0.0
+      ],
+      "realized_value": 8,
+      "nominal_value": 8,
+      "revenue": 6.0,
+      "usable_entrant_access": 0,
+      "nominal_entrant_access": 0,
+      "late_jobs": 0,
+      "wasted_ms": 0,
+      "reserve_ms": 0,
+      "details": [
+        {
+          "id": "D",
+          "finish_ms": 200,
+          "deadline_ms": 250,
+          "timely": true
+        }
+      ]
+    },
+    "200": {
+      "allocated": [
+        "D"
+      ],
+      "order": [
+        "D"
+      ],
+      "completed": [
+        "D"
+      ],
+      "payments": [
+        0.0,
+        0.0,
+        6,
+        0.0
+      ],
+      "utilities": [
+        0.0,
+        0.0,
+        2,
+        0.0
+      ],
+      "realized_value": 8,
+      "nominal_value": 8,
+      "revenue": 6.0,
+      "usable_entrant_access": 0,
+      "nominal_entrant_access": 0,
+      "late_jobs": 0,
+      "wasted_ms": 0,
+      "reserve_ms": 0,
+      "details": [
+        {
+          "id": "D",
+          "finish_ms": 200,
+          "deadline_ms": 200,
+          "timely": true
+        }
+      ]
+    }
+  }
+}

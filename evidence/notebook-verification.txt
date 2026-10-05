@@ -1,0 +1,1 @@
+PASS: executed embedded notebook source in an independent working directory; complete robot_results.json equals standalone output.

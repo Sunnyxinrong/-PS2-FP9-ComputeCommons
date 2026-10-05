@@ -1,66 +1,76 @@
-# Compute Commons: Access Rights in Embodied-AI Inference Auctions
+# Compute Commons: Usable Access to Robot Inference
 
-**FP9 · Xinrong Sun · COMSCI/ECON 206 · Professor Luyao Zhang**
+FP9 · Xinrong Sun · COMSCI/ECON 206 · Professor Luyao Zhang
 
-Review snapshot: `ps2-review-2026-09-27`. Solo team. This package contains an English proposal, synthetic computational demonstration, a self-contained executed notebook and a Hugging Face-ready static behavioral interaction. It extends the author's classroom second-price inference-auction proposal and the PS1 distinction between consultation and binding participation.
+Research revision: 2026-10-05. The original author identified that the previous interchangeable-window auction lacked robotics specificity. This revision studies **usable** inference access: action-buffer expiry and moving-target pose freshness restrict which allocations can deliver value. All numerical evidence is synthetic; no trained policy, robot trial or completed human study is claimed.
 
-## Reproduce the actual results
+## Reproduce
 
-Python 3.10 or later; standard library only:
+Python 3.10+; standard library only. From this repository:
 
 ```bash
-cd code
-python model.py
+python code/robot_model.py
+node verify-robot.cjs
 ```
 
-This writes `results.json` and `sweep.csv`. The fresh run passes **144,439 assertions**. Expected core results:
+The Python command writes `code/robot_results.json` and `code/robot_sweep.csv`. The output includes 36,289 assertion checks, six worked treatments, 300 paired random batches (seed 206), physical-state ablations and network-delay sensitivity. Node.js is optional and verifies the Python/JavaScript worked outputs. The executed `code/compute_commons_ps2.ipynb` embeds the model and runs without downloading source. It writes outputs into the notebook working directory.
 
-| Rule | Worker reserve | Entrant credit | Winners | Payments | Winner utilities | Firm value | Revenue |
-|---|---:|---:|---|---|---|---:|---:|
-| Standard | 0 | 0 | A, B | 6, 6 | 4, 3 | 19 | 12 |
-| Credit only | 0 | 4 | A, E | 9, 5 | 1, 1 | 16 | 14 |
-| Reservation only | 1 | 0 | A | 9 | 1 | 10 | 9 |
-| Both | 1 | 5 | E | 5 | 1 | 6 | 5 |
+| Rule | Admitted | Payments | Timely jobs | Realized value | Revenue |
+|---|---|---|---|---:|---:|
+| Capacity only | A, B | 8, 8 | A | 10 | 16 |
+| EDF | A, D | 0, 0 | A, D | 18 | 0 |
+| Feasible auction | A, D | 9, 6 | A, D | 18 | 15 |
+| Feasible + credit 3 | A, E | 9, 5 | A, E | 16 | 14 |
+| Feasible + reserve 100 ms | A | 9 | A | 10 | 9 |
+| Reserve + credit 5 | E | 5 | E | 6 | 5 |
 
-All use values (10,9,6), eligibility (0,0,1), capacity 2 and fixed tie order A/B/E. Payments and values have synthetic normalized units. Utility for every loser is zero. The 39-setting sweep changes reserve from 0 through 2 and credit from 0 through 12.
+Values A/B/D/E are 10/9/8/6. Each job needs 200 ms; horizon is 400 ms. Queue steps are 2/4/4/4 at 100 ms per step. Target speed is 50 mm/s, pose tolerance 20/10/20/20 mm, and network delay zero. Hence deadlines are 200/200/400/400 ms. Only E is eligible.
 
-`code/compute_commons_ps2.ipynb` embeds the exact Python source and captured local execution. Upload it to Colab or run in Jupyter; it does not fetch code remotely. Hosted execution is not asserted. Optional JavaScript parity check, from this package root:
+The capacity-only baseline gets the same EDF dispatch as the physical mechanism; only admission ignores robot deadlines. It is deliberately misspecified when values require timely delivery. B's realized utility is -8, and bidding zero avoids this loss. Truthful baseline inputs therefore are **not an equilibrium claim**. EDF is an engineering comparator with no payment. Feasible and credited mechanisms have value-truthfulness only when public state, eligibility, deterministic service and the feasible family are fixed independently of bids.
+
+## Model and algorithm
+
+`deadline = min(buffer_steps * period_ms, 1000 * tolerance_mm / speed_mm_s) - network_ms - guard_ms`, with infinite pose lifetime for zero speed. This bound assumes no predictive motion compensation. Timeliness is necessary, not sufficient, for successful or safe manipulation.
+
+Enumerate every subset, check cumulative completion in EDF order, maximize the credited-bid objective, and compute each winner's inclusion/exclusion critical threshold. The implementation caps batches at 12 jobs. It is an exponential offline oracle, not a real-time server. A deployable system must account for solver latency and stochastic execution, verify telemetry and eligibility, and retain independent local protective control.
+
+The physical ablations separately relax buffer expiry and pose freshness. Both change the worked feasible set. The network stress reoptimizes under known added delay; it is not an experiment with unexpected packet delay. Random-instance intervals measure Monte Carlo uncertainty under the declared generator, not population-level robot performance.
+
+## Behavioral artifact
+
+Open `hf_space/index.html` with `robot.js` beside it. Predict a payment, timely service and confidence; submit a bid; inspect the result; reflect; export JSON locally. Synthetic opponents and manual facilitator entry have distinct labels. A facilitator must collect sealed peer bids separately. No records are uploaded, no names are requested, and no human dataset is supplied.
+
+The old `hf_space/model.js` implements the preserved legacy auction only. The revised interface loads `robot.js`. The old `verify-js.cjs`, `code/model.py`, `code/results.json`, `code/sweep.csv` and earlier logs remain legacy evidence, not the robotics experiment. The current entry point is `robot_model.py`.
+
+## Paper and poster
+
+Upload the source ZIP into the instructor-shared Overleaf project, choose `main.tex`, and compile with XeLaTeX. The paper keeps the course ACM structure, five main sections, Author Notes and Appendices A–F. The source includes the class, bibliography style, references, figures and generated results table.
 
 ```bash
-node verify-js.cjs
-```
-
-The DOM-handler test uses a stub, not a full browser. The proof in Appendix A establishes continuous-domain value incentive compatibility; finite testing alone does not.
-
-## Behavioral demonstration
-
-Open `hf_space/index.html` with `model.js` beside it. It runs without an account, package installation or server. The Hugging Face metadata in `hf_space/README.md` declares a static Space. The participant predicts a payment, commits a bid, observes the outcome, and optionally exports a local reflection JSON. It labels synthetic opponents and manual peer entry separately. No response data are automatically transmitted. A facilitator must independently collect sealed bids for peer play; this static page cannot enforce multiplayer privacy.
-
-## Compile the proposal
-
-Upload the complete source to the supplied Overleaf project, select `main.tex` and pdfLaTeX, and recompile. The source retains the course-supplied `acmart.cls` and `ACM-Reference-Format.bst`.
-
-```bash
-pdflatex main
+xelatex main
 bibtex main
-pdflatex main
-pdflatex main
+xelatex main
+xelatex main
 ```
 
-Main Sections 1–5, metadata, teaser and artifact notices must fit in two pages. Author Notes, references and Appendices A–F follow. Inspect the rendered PDF after any change to links or text.
+The one-slide poster retains A0 landscape dimensions (1189 × 841 mm), editable tables, the course layout and logo. Its PDF must match the PPTX.
 
-## Scope and evidence
+## Literature and bounded contribution
 
-The slot is a standardized inference admission window for a proposed supervised OpenVLA-based testbed. No robot, VLA or hardware benchmark was run. Private values, unit demand, public fixed eligibility, enforceable payments and a committed coordinator define the theorem. Arbitrary budgets, dynamic queues, complementary slots, common-value safety signals, collusion and false identities are outside it.
+- Black, Galliker & Levine, *Real-Time Execution of Action Chunking Flow Policies*, 2025, https://arxiv.org/abs/2506.07339 : delayed robotic action execution already has dedicated methods.
+- Sung et al., *Effort Allocation for Deadline-Aware Task and Motion Planning*, 2024, https://arxiv.org/abs/2410.05828 : computation allocation under robot deadlines is established research.
+- Ichnowski et al., *FogROS2*, https://arxiv.org/abs/2205.09778 : cloud robotics needs measured network and execution timing.
+- Mahajan et al., *Themis*, NSDI 2020, https://www.usenix.org/conference/nsdi20/presentation/mahajan : GPU auctions and fairness are not new.
+- Roughgarden, *Myerson's Lemma*, 2013, https://timroughgarden.org/f13/l/l3.pdf : the critical-payment principle is established theory.
 
-A separate eligibility stress test lets incumbent A acquire an undeserved entrant label. Under reserve 1 and credit 5, A then gains 4. An idealized additional fine 10 with independent perfect detection needs probability at least 0.4 to deter this one deviation. This is not a solved audit game or a legal enforcement recommendation.
+The contribution is the explicit nominal/usable-access comparison and its incentive consequence in a transparent robot-state model. It does not establish worldwide priority, safety, or readiness for a top international venue. A stronger research paper needs calibrated workload traces, measured robot outcomes, online computational overhead, stronger scheduling baselines and new theory or empirical findings beyond this synthetic integration.
 
-## Publication and submission status
+## Publication, collaboration and responsibility
 
-The local snapshot is executable. The designated course repository is https://github.com/dku-comsci-econ206-Autumn2026/-PS2-FP9-ComputeCommons and the designated Space is https://huggingface.co/spaces/dku-comsci-econ206-2026/Xinrong_Sun. The GitHub integration returned HTTP 403 on upload; the Hugging Face connector is read-only. PS2 files have not been published to either destination. A personal fork and pull request, exact release commit, and a hosted notebook URL remain pending. The prior PS1 repository at https://github.com/Sunnyxinrong/PS1-Xinrong-Sun was inspected at commit `50930c85a29265d24e603dc25d3968879ccc5ad6`; it is not a PS2 repository.
+Team repository: https://github.com/dku-comsci-econ206-Autumn2026/-PS2-FP9-ComputeCommons
 
-The author supplied a four-part classroom account, not recorded human bids. September 28 symposium reviews, two outgoing reviews, and the September 30 response cannot be represented as completed in this September 27 draft. Record genuine feedback and verification before the final revision.
+Space: https://huggingface.co/spaces/dku-comsci-econ206-2026/compute-commons
 
-## Attribution and responsibility
+See the release manifest and accompanying text entry for the actual revision commit and deployment status. The earlier commit `b03cac82a1b535aa8dbcbd7f1608905386ec5f93` identifies the earlier submission and does not contain this revision. The Overleaf shared project URL and actual symposium reviews were not supplied with the files. The course milestone was September 30; this revision is dated October 5, without backdating.
 
-Original code: MIT (see LICENSE). Course/ACM templates and scholarly materials retain their own terms. The poster adapts the supplied course template. The model uses established Vickrey and critical-payment principles. ChatGPT/Codex assisted derivation, code, checks, primary-source retrieval, English writing and artifact preparation. Sun supplied the topic, prior work and classroom decision. Independent human review of new material is not certified; record it only after it occurs. No private classroom photographs are included in the public demo.
+Xinrong Sun owns the original research direction and project and requested this revision. Codex assisted the literature search, physical-model extension, code, writing and artifact alignment. Appendix A records material suggestions and checks. Automated verification is not a substitute for final author review; the author must review this revision before signing the course confirmation. Original code is MIT licensed; course/ACM templates and third-party materials retain their own terms.
